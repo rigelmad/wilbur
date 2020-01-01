@@ -1,0 +1,12 @@
+<launch>
+  <!-- Setup transform to base_link -->
+  <node pkg="tf2_ros"
+    type="static_transform_publisher"
+    name="lidar_tf_broadcaster"
+    args="0.05 0 0 0 0 0 base_link cloud" />
+
+    <node pkg="differential_drive" type="diff_tf.py" name="diff_tf">
+       <rosparam param="rate">8.0</rosparam>
+       <rosparam param="base_width">0.205</rosparam>
+    </node>
+</launch>

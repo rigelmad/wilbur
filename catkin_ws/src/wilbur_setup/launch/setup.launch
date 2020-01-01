@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find wilbur_drive)/launch/diff_drive.launch" />
+  <include file="$(find wilbur_tf)/launch/setup_tf.launch" />
+  <include file="$(find sick_scan)/launch/sick_tim_7xx.launch" />
+  <include file="$(find wilbur_actuator)/launch/actuator.launch" />
+
+</launch>

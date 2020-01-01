@@ -1,0 +1,4 @@
+<launch>
+  <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find wilbur_setup)/config/lidar_cloud.rviz" /> -->
+  <node type="rqt_gui" name="rqt_gui" pkg="rqt_gui" args="--perspective-file $(find wilbur_setup)/config/tof_lidar.perspective" />
+</launch>

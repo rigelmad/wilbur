@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="wilbur_drive" type="drive_teleop" name="drive_teleop" output="screen" />
+  <node pkg="joy" type="joy_node" name="joy_node">
+    <param name="dev" type="string" value="/dev/input/js0"/>
+    <param name="deadzone" type="double" value="0.1"/>
+  </node>
+</launch>

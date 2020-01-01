@@ -1,0 +1,17 @@
+catkin_ws/devel/
+catkin_ws/build/
+catkin_ws/logs/
+catkin_ws/install/
+.catkin_tools
+.catkin_workspace
+catkin_ws/src/**/NUCLEO_L432KC/
+catkin_ws/src/**/Release/
+catkin_ws/src/**/Debug/
+catkin_ws/src/**/Develop/
+*.bag
+*.pgm
+*.elf
+*.hex
+*.pyc
+*.pyo
+*.swp

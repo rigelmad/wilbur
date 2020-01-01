@@ -1,0 +1,25 @@
+<launch>
+
+  <node name="motor_driver"        pkg="rosserial_python"      type="serial_node.py" output="screen">
+    <param name="port"              type="string"               value="/dev/serial/by-id/usb-FTDI_FT231X_USB_UART_D306EP1K-if00-port0"/>
+    <param name="baud"              type="int"                  value="57600"/>
+  </node>
+
+  <node name="encoder"        pkg="rosserial_python"      type="serial_node.py" output="screen">
+    <param name="port"              type="string"               value="/dev/serial/by-id/usb-STMicroelectronics_STM32_STLink_066AFF575251717867153610-if02"/>
+    <param name="baud"              type="int"                  value="57600"/>
+  </node>
+
+  <rosparam param="ticks_meter">1528</rosparam>
+
+  <node pkg="differential_drive" type="twist_to_motors.py" name="twist_to_motors" output="screen">
+    <rosparam param="base_width">0.205</rosparam>
+    <rosparam param="rate">5</rosparam>
+  </node>
+
+  <param name="robot_description" textfile="$(find wilburdf)/urdf/wilb.urdf" />
+  <!-- <node pkg="rviz" type="rviz" name="rviz" output="screen"/> -->
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+</launch>
